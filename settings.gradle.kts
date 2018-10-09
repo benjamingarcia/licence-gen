@@ -1,1 +1,1 @@
-rootProject.name = "greetings"
+rootProject.name = "licence-gen"
