@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="3 seconds">
+    <include file="${CONF_PATH}/logback.xml"/>
+</configuration>
