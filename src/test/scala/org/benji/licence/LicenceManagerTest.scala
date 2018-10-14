@@ -3,10 +3,10 @@ package org.benji.licence
 import java.io.File
 import java.security.KeyPair
 
-import LicenceConfig._
-import LicenceManager._
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.commons.io.FileUtils
+import org.benji.licence.LicenceConfig._
+import org.benji.licence.LicenceManager._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}

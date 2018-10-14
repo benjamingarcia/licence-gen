@@ -9,17 +9,17 @@ import org.apache.commons.io.FileUtils
 import scala.util.Try
 
 /**
-  * An object to manage generation and checking licence
+  * An object to manage generation and checking org.benji.licence
   */
 object LicenceManager {
 
   /**
-    * Check if a licence has not be corrupted
+    * Check if a org.benji.licence has not be corrupted
     *
-    * @param keyGen [[KeyGenerator]] used to encrypt/decrypt licence data
+    * @param keyGen [[KeyGenerator]] used to encrypt/decrypt org.benji.licence data
     * @param publicKey [[PublicKey]] used to verify integrity
     * @param encoding default encoding format to read/write in file
-    * @param licenceOutput [[File]] contain licence which need to be verified
+    * @param licenceOutput [[File]] contain org.benji.licence which need to be verified
     * @return a [[Boolean]] return at true if check is valid
     */
   def checkLicence(
@@ -27,7 +27,7 @@ object LicenceManager {
       publicKey: PublicKey,
       encoding: String,
       licenceOutput: File): Boolean = {
-    //check licence
+    //check org.benji.licence
     val readLicence = FileUtils.readFileToString(licenceOutput, encoding)
     val splittedLicence = readLicence.split('.')
     Try {
@@ -42,13 +42,13 @@ object LicenceManager {
   }
 
   /**
-    *  Generate a licence thanks to a private key and some informations
+    *  Generate a org.benji.licence thanks to a private key and some informations
     *
-    * @param keyGen [[KeyGenerator]] used to encrypt/decrypt licence data
+    * @param keyGen [[KeyGenerator]] used to encrypt/decrypt org.benji.licence data
     * @param privateKey [[PrivateKey]] used to verify integrity
     * @param encoding default encoding format to read/write in file
     * @param licenceContent Licence content
-    * @param licenceOutput [[File]] contain licence which need to be verified
+    * @param licenceOutput [[File]] contain org.benji.licence which need to be verified
     */
   def generateLicence(
       keyGen: KeyGenerator,

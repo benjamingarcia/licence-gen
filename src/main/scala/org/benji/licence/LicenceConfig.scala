@@ -7,7 +7,7 @@ object LicenceConfig extends Serializable {
   val ENCODING = "UTF-8"
   val PRIVATEKEYFILENAME = "private"
   val PUBLICKEYFILENAME = "public"
-  val LICENCEKEYFILENAME = "licence"
+  val LICENCEKEYFILENAME = "org/benji/licence"
   private val SAVEDFILE = "savedpath"
   private val LICENCEFILE = "licencefile"
 

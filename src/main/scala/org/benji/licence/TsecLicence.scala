@@ -3,20 +3,20 @@ package org.benji.licence
 import java.io.File
 import java.security.KeyPair
 
-import LicenceConfig._
+import org.benji.licence.LicenceConfig._
 import org.apache.commons.io.FileUtils
 import org.slf4j.LoggerFactory
 
-object POLicence extends App {
+object TsecLicence extends App {
 
-  val LOGGER = LoggerFactory.getLogger(POLicence.getClass)
+  val LOGGER = LoggerFactory.getLogger(TsecLicence.getClass)
 
   // save folder for keys
   private val privateKey: File = new File(s"$getSavedFile${File.separator}$PRIVATEKEYFILENAME")
   private val publicKey: File = new File(s"$getSavedFile${File.separator}$PUBLICKEYFILENAME")
   private val licenceOutput: File = new File(s"$getSavedFile${File.separator}$LICENCEKEYFILENAME")
 
-  LOGGER.info("Let's create licence \uD83D\uDD12")
+  LOGGER.info("Let's create org.benji.licence \uD83D\uDD12")
 
   // generate class
   LOGGER.debug("Instantiate keyGenerator")
@@ -28,11 +28,11 @@ object POLicence extends App {
   keyGen.writeToFile(publicKey, security.getPublic.getEncoded)
 
   //load conf
-  LOGGER.debug("Open licence file")
+  LOGGER.debug("Open org.benji.licence file")
   val licenceContent: String =
     FileUtils.readFileToString(new File(s"$getLicenceFile"), ENCODING)
 
-  LOGGER.debug("Generate licence")
+  LOGGER.debug("Generate org.benji.licence")
   LicenceManager.generateLicence(
     keyGen,
     security.getPrivate,
@@ -40,7 +40,7 @@ object POLicence extends App {
     licenceContent,
     licenceOutput)
 
-  LOGGER.debug("Check licence")
+  LOGGER.debug("Check org.benji.licence")
   val checked = LicenceManager.checkLicence(keyGen, security.getPublic, ENCODING, licenceOutput)
 
   if (checked) {
