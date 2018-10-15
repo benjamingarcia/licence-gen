@@ -1,0 +1,8 @@
+{
+  "customer": {
+    "id": 12345,
+    "project": 100,
+    "users": 300,
+    "expiration": 1577836740000
+  }
+}
